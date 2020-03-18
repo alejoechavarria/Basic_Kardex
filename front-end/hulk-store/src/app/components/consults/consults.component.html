@@ -1,0 +1,46 @@
+<form class="form-inline my-2 my-lg-0">    
+  <div class="form-group col-md-4">
+      <label for="inputReference">Product Reference</label>
+      <input class="form-control mr-sm-2 col-10" type="number" placeholder="reference" aria-label="Search" id="inputReference" [(ngModel)]="id" name="id">
+  </div>
+  <div class="form-group col-md-2">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="getProduct()">Search</button>
+  </div>        
+
+  <div>
+      <table class="table">
+          <thead>
+            <tr> 
+              <th scope="col">Product Reference</th>
+              <th scope="col">Product Name </th>
+              <th scope="col">Quantity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{product.id}}</td>
+              <td>{{product.name}}</td>
+              <td>{{product.quantity}}</td>
+            </tr>
+          </tbody>
+      </table>
+  </div>
+</form>
+
+<form class="form-inline my-2 my-lg-0">    
+  <div class="form-group col-md-4">
+      <label for="inputName">Product Name</label>
+      <input class="form-control mr-sm-2 col-10" type="text" placeholder="new name" aria-label="Search" id="inputName" [(ngModel)]="name" name="name">
+      <label>{{message}}</label>
+  </div>
+  <div class="form-group col-md-2">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="text" (click)="updateProduct()">Update</button>
+  </div>  
+</form>
+
+<form class="form-inline my-2 my-lg-0">   
+  <div class="form-group col-md-4"></div>
+  <div class="form-group col-md-6">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="text" (click)="deleteProduct()">Delete</button>
+  </div>  
+</form>
