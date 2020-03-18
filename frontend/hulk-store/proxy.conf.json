@@ -1,0 +1,15 @@
+{
+  "/sale/*": {
+    "target": "http://localhost:9000",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+
+  "/products/*": {
+    "target": "http://localhost:9000",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}
