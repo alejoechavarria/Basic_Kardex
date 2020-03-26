@@ -1,15 +1,17 @@
-<form>
-  <div class="form-group col-md-4">
-    <label for="inputReference">Product Reference</label>
-    <input class="form-control mr-sm-2 col-10" type="number" aria-label="Search" id="inputReference" [(ngModel)]="refProduct" name="refProduct">
-    <label>{{message}}</label>
+<div class="container-fluid">
+  <div class="row my-3">
+    <div class="col-2">  
+      <label for="inputReference">Product Reference</label>     
+      <input class="form-control mr-sm-2 col-10" type="number" aria-label="Search" id="inputReference" [(ngModel)]="refProduct" name="refProduct">
+      <label>{{message}}</label>      
+    </div>
+    <div class="col-2 my-3 align-self-center">
+      <button class="btn btn-outline-success" type="submit" (click)="search()">Search</button>
+    </div>
   </div>
-  <div class="form-group col-md-2">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="search()">Search</button>
-  </div> 
-</form>
+</div>
 
-<form >
+<div class="container-fluid">
   <div class="form-row">
     <div class="form-group col-md-2">
       <label for="inputIdSale">Sale Reference</label>
@@ -17,26 +19,26 @@
     </div>
     <div class="form-group col-md-2">
       <label for="inputName">Product name</label>
-      <input type="text" class="form-control" id="inputName" [(ngModel)]="name" name="name">
+      <input type="text" class="form-control" id="inputName" [(ngModel)]="name" name="name" disabled>
     </div>
     <div class="form-group col-md-2">
       <label for="inputDetail">Detail</label>
       <input type="text" class="form-control" id="inputDetail" [(ngModel)]="detail" name="detail"> 
     </div>
     <div class="form-group col-md-2">
-      <label for="inputQuantity">Quantity {{stockMessage}}</label>
-      <input type="number" class="form-control" id="inputQuantity" [(ngModel)]="quantity" name="quantity" (change)="calculateTotal()">
+      <label for="inputQuantity">Quantity</label>
+      <input type="number" placeholder="{{stockMessage}}" class="form-control" id="inputQuantity" [(ngModel)]="quantity" name="quantity" (change)="calculateTotal()">
     </div>
     <div class="form-group col-md-2">
       <label for="inputCost">Cost/Unit</label>
-      <input type="number" class="form-control" id="inputCost" [(ngModel)]="cost" name="cost" (change)="calculateTotal()">
+      <input type="number" class="form-control" placeholder="{{suggestedPriceMessage}}" id="inputCost" [(ngModel)]="cost" name="cost" (change)="calculateTotal()">
     </div>
     <div class="form-group col-md-2">
       <label for="inputTotal">Total</label>
       <input type="number" class="form-control" id="inputTotal" [(ngModel)]="total" name="total" disabled>
     </div>
   </div>
-  <div class="form-group col-md-2">
+  <div class="form-group">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="addSale()">Add</button>  
   </div>  
-</form> 
+</div> 

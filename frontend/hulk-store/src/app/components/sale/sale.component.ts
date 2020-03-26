@@ -22,6 +22,7 @@ export class SaleComponent{
   message:string;
   product = new Product();
   stockMessage: String;
+  suggestedPriceMessage: String;
 
   constructor(private saleService: SaleService, private stockService: ProductService) { }
 
@@ -44,7 +45,8 @@ export class SaleComponent{
       this.product=product;
       console.log(product); 
       this.name=product.name;
-      this.stockMessage = ": " + product.quantity + " in stock";
+      this.stockMessage = "Stock: " + product.quantity;
+      this.suggestedPriceMessage = "Suggested price: " + product.cost;
     },
     (error) => {this.message = error.error.message});
   }
