@@ -14,7 +14,7 @@ import java.util.Optional;
 public class SaleProductsService {
 
     private final SaleProductsRepository saleProductsRepository;
-    private StockRepository stockRepository;
+    private final StockRepository stockRepository;
 
     public  SaleProductsService(SaleProductsRepository saleProductsRepository, StockRepository stockRepository) {
         this.saleProductsRepository = saleProductsRepository;
@@ -28,7 +28,7 @@ public class SaleProductsService {
         }
 
         if (product.get().getQuantity() < saleProducts.getQuantity()) {
-            throw new NoProductsInStockException("No products in stock");
+            throw new NoProductsInStockException("There are not enough products in stock");
         }
 
         saleProductsRepository.save(saleProducts);

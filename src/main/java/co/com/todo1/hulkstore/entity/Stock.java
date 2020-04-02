@@ -8,17 +8,27 @@ public class Stock {
     @Id
     private Integer id;
     @Column
-    private int document;
+    private Integer document;
     @Column
     private String name;
     @Column
-    private int quantity;
+    private Integer quantity;
     @Column
-    private int cost;
+    private Integer cost;
     @Column
-    private int total;
+    private Integer total;
     @Column
     private String detail;
+
+    public Stock(Integer id, int document, String name, int quantity, int cost, int total, String detail) {
+        this.id = id;
+        this.document = document;
+        this.name = name;
+        this.quantity = quantity;
+        this.cost = cost;
+        this.total = total;
+        this.detail = detail;
+    }
 
     public Integer getId() {
         return id;
