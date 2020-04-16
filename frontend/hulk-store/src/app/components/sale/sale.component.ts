@@ -19,10 +19,10 @@ export class SaleComponent{
   quantity: number;
   cost: number;
   total: number;  
-  message:string;
+  message: string;
   product = new Product();
-  stockMessage: String;
-  suggestedPriceMessage: String;
+  stockMessage: string;
+  suggestedPriceMessage: string;
 
   constructor(private saleService: SaleService, private stockService: ProductService) { }
 

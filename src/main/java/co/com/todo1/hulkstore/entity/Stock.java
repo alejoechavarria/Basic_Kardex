@@ -30,6 +30,8 @@ public class Stock {
         this.detail = detail;
     }
 
+    public Stock() {}
+
     public Integer getId() {
         return id;
     }

@@ -30,6 +30,8 @@ public class SaleProducts {
         this.detail = detail;
     }
 
+    public SaleProducts() {}
+
     public int getId() {
         return id;
     }

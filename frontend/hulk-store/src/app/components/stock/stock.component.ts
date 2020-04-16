@@ -26,16 +26,8 @@ export class ProductComponent {
   addProduct() {
     this.message=""
     const stock = new Product(this.id, this.document, this.name, this.quantity, this.cost, this.total, this.detail);
-    if (stock.total==undefined) {
-      stock.total = stock.quantity*stock.cost;
-    }
-
-    if (stock.cost==undefined) {
-      stock.cost = stock.total/stock.quantity;
-    }
-
     this.stockService.addProduct(stock).subscribe(() => {
-      this.message= "Registered purchase";
+      this.message = "Registered purchase";
       this.listProducts();      
     },
     (error) => {this.message = error.error.message});

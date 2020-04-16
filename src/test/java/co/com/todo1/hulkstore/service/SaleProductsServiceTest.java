@@ -37,7 +37,6 @@ class SaleProductsServiceTest {
     @Test
     public void save_sale_is_incorrect_because_product_not_found() {
         //Arrange
-        Stock stock = new Stock(1,1,"vasos",100,5000,500000,"Compra");
         SaleProducts saleProducts = new SaleProducts(1,1,"vasos",50,5000,250000,"venta");
         SaleProductsRepository saleProductsRepository = Mockito.mock(SaleProductsRepository.class);
         StockRepository stockRepository = Mockito.mock(StockRepository.class);
